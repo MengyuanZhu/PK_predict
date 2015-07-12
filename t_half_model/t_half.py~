@@ -1,0 +1,8 @@
+import numpy
+
+from sklearn.externals import joblib
+clf=joblib.load('t_half.pkl')
+
+
+
+

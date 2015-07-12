@@ -1,0 +1,15 @@
+import numpy
+from scipy import stats
+from sklearn.externals import joblib
+x=numpy.loadtxt("mrt_property.txt")
+
+clf=joblib.load('mrt.pkl')
+model=clf.best_estimator_
+slope,intercept,r_value,p_value,std_err=stats.linregress(x[0:,0],clf.predict(x[0:,1:]))
+
+
+importances=model.feature_importances_
+for i in importances:
+	print i
+
+
