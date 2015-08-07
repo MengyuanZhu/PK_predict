@@ -5,11 +5,10 @@ x=numpy.loadtxt("clearance_property.txt")
 
 clf=joblib.load('clearance.pkl')
 model=clf.best_estimator_
-num=0
-for i in x[0:,0]:
-	print i, clf.predict(x[0:,1:])[num]
-	num=num+1
-	
+importances = model.feature_importances_
+
+for i in importances:
+	print i
 
 
 

@@ -11,7 +11,7 @@ feature= x[0:,1:]
 target= x[0:,0]
 num=0
 for i in target:
-	print i, model.predict(feature[num])[0]
+	print i, round(model.predict(feature[num])[0],2)
 	num=num+1
 #for i in importances:
 #	print i
